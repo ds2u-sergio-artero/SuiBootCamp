@@ -28,7 +28,7 @@ module suiz3::condicionais {
         // Abort
         let acesso_usuario: bool = true; // Neste cenário, nosso usuário tem acesso a todas as funções.
         // Normalmente, você teria que avaliar isso dependendo do seu módulo.
-        if(acesso_usuario) { // Tente remover a negação e execute novamente.
+        if(!acesso_usuario) { // Tente remover a negação e execute novamente.
             abort(1) // O código é retornado ao usuário se a execução abortar.
         } else {
             print(&utf8(b"Usuario tem acesso."));
@@ -37,6 +37,7 @@ module suiz3::condicionais {
         // Assert
         assert!(acesso_usuario, 1); // Outra forma de escrever a expressão anterior sem a necessidade de retornar algo.
         // Tente negar o acesso usando !
+        assert!(!acesso_usuario, 1);
 
         // Códigos de erro
         assert!(acesso_usuario, ESemAcesso); // É uma boa prática especificar o motivo de um abort/assert.
