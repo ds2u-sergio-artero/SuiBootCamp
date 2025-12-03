@@ -41,7 +41,7 @@ module suiz3::condicionais {
 
         // Códigos de erro
         assert!(acesso_usuario, ESemAcesso); // É uma boa prática especificar o motivo de um abort/assert.
-        assert!(!acesso_usuario, NAO_HA_ACESSO);
+        assert!(acesso_usuario, NAO_HA_ACESSO);
     }
 
     #[test]
