@@ -1,5 +1,10 @@
+#[allow(implicit_const_copy)]
 module suiz3::tipos_primitivos {
     use std::debug::print;
+    use std::string::utf8;
+
+    // #DESAFIO: Declare 1 valor inteiro constante com qualquer valor que você queira.
+    const SETE: u8 = 7;
 
     fun pratica() {
         // Inteiros (Integers)
@@ -56,13 +61,46 @@ module suiz3::tipos_primitivos {
         print(&or); // Resultado: [debug] true
         
         let negacao = !true; // Inverte o valor.
-        print(&negacion); // Resultado: [debug] false
+        print(&negacao); // Resultado: [debug] false
 
+        
+    }
+
+    fun desafio() {
+
+        print(&utf8(b""));
+        print(&utf8(b""));
+        print(&utf8(b""));
+        print(&utf8(b"Iniciando desafio..."));        
+        print(&utf8(b"#DESAFIO:Declare 1 valor inteiro constante com qualquer valor que você queira.."));
+        // Declarado a constante SETE
+        
+        print(&utf8(b"#DESAFIO:Declare 1 variável inteira com qualquer valor que você queira."));
+        let a = 100;        
+        
+        print(&utf8(b"#DESAFIO: Imprima ambos os números."));
+        print(&a);
+        print(&SETE);
+
+        print(&utf8(b"#DESAFIO: Declare uma variável que compare se esses números são iguais."));
+        let _iguais = a == SETE;
+        print(&_iguais);
+
+        print(&utf8(b"#DESAFIO: Declare uma variável que compare se o 1º número é maior que o segundo."));
+        let _maior = a > SETE;
+        print(&_maior);
+
+        print(&utf8(b"#DESAFIO: Declare uma variável que compare if as 2 comparações anteriores são verdadeiras."));
+        let _verdadeiras = _iguais && _maior;
+        
+        print(&utf8(b"#DESAFIO: Imprima o resultado desta última variável."));
+        print(&_verdadeiras);
         
     }
 
     #[test]
     fun teste() {
         pratica();
+        desafio();
     }
 }
