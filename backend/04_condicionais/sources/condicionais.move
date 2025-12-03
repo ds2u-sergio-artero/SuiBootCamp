@@ -37,10 +37,10 @@ module suiz3::condicionais {
         // Assert
         assert!(acesso_usuario, 1); // Outra forma de escrever a expressão anterior sem a necessidade de retornar algo.
         // Tente negar o acesso usando !
-        assert!(!acesso_usuario, 1);
+        //assert!(!acesso_usuario, 1);
 
         // Códigos de erro
-        assert!(acesso_usuario, ESemAcesso); // É uma boa prática especificar o motivo de um abort/assert.
+        assert!(!acesso_usuario, ESemAcesso); // É uma boa prática especificar o motivo de um abort/assert.
         assert!(acesso_usuario, NAO_HA_ACESSO);
     }
 
