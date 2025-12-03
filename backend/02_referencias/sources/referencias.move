@@ -25,7 +25,7 @@ module suiz3::referencias {
 
         *copia_mutavel = 20;
         print(copia_mutavel);
-        print(&original); // Por que agora o original é 20 se o que modificamos foi a cópia mutável? 
+        print(&original); // Por que agora o original é 20 se o que modificamos foi a cópia mutável? R.: Porque copia_mutavel é uma referência para original, conforme linha 23
     }
 
     #[test]
